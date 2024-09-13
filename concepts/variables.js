@@ -14,5 +14,6 @@ console.log(name);
 
 // constantes const: no cambiaràn de valor
 const PI = 3.1416;
-//PI = 3.15;
+//
+PI = 3.15;
 console.log(PI);
