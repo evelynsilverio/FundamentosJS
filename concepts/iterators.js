@@ -1,36 +1,22 @@
-// High Order Function
-// Funciones de Orden Superior
-// Funciones que reciben como
-// parámetros otras funciones
+// High order functions
+// Funciones de orden superior
+// Funciones que reciben
+// parametros otras funciones
 
-const suma = (a, b) => a + b;
-const resta = (a, b) => a - b;
+const suma = (a, b) => a+b;
+const resta = (a, b) => a-b;
 
 const calculator = (a, b, callback) => {
-    const result = callback(a, b);
+    const result = callback (a, b);
     console.log(result);
 }
 
 calculator(15, 9, suma);
 calculator(15, 9, resta);
-calculator(15, 9, (a, b) => a * b);
-calculator(15, 9, (a, b) => a / b);
+calculator(15, 9, (a ,b) => a*b);
+calculator(15, 9, (a ,b) => a/b);
 
-const foods = ['Tamales', 'Pizza', 'Chilaquiles', 'Pozole', 'Tacos', 'Maruchan']
-
-const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-const squares = number.map(num => num * num);
-const cubes = number.map(num => Math.pow(num, 3));
-const halfs = number.map(num => num / 2);
-console.log(number);
-console.log(squares);
-console.log(cubes);
-console.log(halfs);
-
-
-number.forEach(num => console.log(num));
-number.forEach(num => console.log(Number(num) ** 2));
-number.forEach(num => console.log(Number(num) ** 3));
+const foods = ['Tamales', 'Pambazo', 'Envueltos', 'Memelas', 'Pastes', 'Quesadillas'];
 
 foods.forEach(food => console.log(food));
 foods.forEach(food => console.log(food.length));
@@ -39,43 +25,40 @@ foods.forEach(food => console.log(food.includes('a')));
 const FOODS = foods.map(food => food.toUpperCase());
 console.log(FOODS);
 
-const foodsEmojis = foods.map(food => food + ' 🍔🍗');
+const foodsEmojis = foods.map(food => food + '🍖');
 console.log(foodsEmojis);
 
 const sdoof = foods.map(food => {
-    const separated = food.split('');
-    const reversed = separated.reverse();
-    const joined = reversed.join('');
-    return joined;
-    // food => food.split('').reverse().join('')
-});
-console.log(sdoof)
+    const separate = food.split('');
+     const reversed = separate.reverse();
+     const joined = reversed.join('');
+     return joined;
+     //food => food split('').reverse().join('')
+})
+console.log(sdoof);
 
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
-function wrappedGifts(gifts){
+const squares = numbers.map(num => num * num);
+const cubes = numbers.map(num => num * num * num);
+const halfs = numbers.map(num => num / 2);
+console.log(numbers);
+console.log(squares);
+console.log(cubes);
+console.log(halfs);
+
+function wrapping(gifts) {
     return gifts.map(gift => {
-        const tapa = '*'.repeat(gift.length + 2);
-        return `${ tapa }\n*${ gift }*\n ${ tapa }`
-    });
-}
-const foods = ['Tamales', 'Pizza', 'Chilaquiles', 'Pozole', 'Tacos', 'Maruchan'];
+        const tapa = '*'.repeat(gift.length +2);
+        return ${tapa}\n*${gift}*\n${tapa}
+    });}
 
-//pares impares, mayor y menor a 5
-const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-const impar = number.filter(num => num %2 !==0);
-const par = number.filter(num => num %2 ===0);
-const mayor = number.filter(num => num %2 > 5);
-const menor = number.filter(num => num %2 < 5);
-console.log(number);
-console.log(impar);
-console.log(par);
-console.log(mayor);
-console.log(menor);
+    const foods = ['Tamales', 'Pambazo', 'Envueltos', 'Memelas', 'Pastes', 'Quesadillas'];
+    const wrappeds = wrappedGifts(foods);
+    wrappeds.forEach(item => console.log(item));
 
-// const wrappeds = wrappedGifts(foods);
-// wrappeds.forEach(item => console.log(item));
-
-//filter
+// filter
+const foods = ['Tamales', 'Pambazo', 'Envueltos', 'Memelas', 'Pastes', 'Quesadillas'];
 const containsZ = foods.filter(food => food.includes('z'));
 console.log(foods);
 console.log(containsZ);
@@ -83,30 +66,42 @@ console.log(containsZ);
 const endsWithS = foods.filter(food => food.endsWith('s'));
 console.log(endsWithS);
 
-//forEach, map, filter
 
-// const numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const pares = numbers.filter( number => number %2 ===0 );
+const impares = numbers.filter( number => number %2 !==0 );
+const m5 = numbers.filter( number => number < 5 );
+const M5 = numbers.filter( number => number > 5 );
 
-//reduce
-const sumatoria = numeros.reduce((a,b) => a + b);
-const factorial = numeros.reduce((a,b) => a * b);
+console.log(pares);
+console.log(impares);
+console.log(m5);
+console.log(M5);
+
+// forEach, mao, filter
+
+const numeros = [1,2,3,4,5,6,7,8,9,10];
+
+// reuduce
+const sumatoria = numeros.reduce ((a, b) => a + b);
+const factorial = numeros.reduce ((a, b) => a * b);
 console.log(numeros);
 console.log(sumatoria);
 console.log(factorial);
 
-//some(or) every(and)
+//some (or) every (and)
 const positivos = numeros.every(n => n > 0);
 console.log(positivos);
 const negativos = numeros.every(n => n < 0);
 console.log(negativos);
 
-constages = [20, 21, 25, 17, 18];
+const ages = [20, 21, 25, 17, 18];
 const algunos_mayores = ages.some(n => n >= 18);
-console.log(algunos_mayores)
+console.log(algunos_mayores);
 const algunos_menores = ages.some(n => n < 18);
 console.log(algunos_menores);
 
-const fruits = ['🍔','🍉', '🍎'];
+const fruits = ['🍏','🍐','🍊','🍑','🍒'];
 
-const index_durazno = fruits.findIndex(f => f === '🍎');
-console.log(fruits(index_durazno));
+const index_durazno = fruits.findIndex(f => f === '🍏');
+console.log(fruits[index_durazno]);
