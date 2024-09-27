@@ -28,19 +28,19 @@ btnPlay.addEventListener('click', () => {
     const choices = ['piedra', 'papel', 'tijeras'];
     const aleatorio = Math.floor(Math.random() * 3);
     const choiceMaq = choices[aleatorio];
-    divMaq.innerText = choiceMaq.charAt(0).toUpperCase() + choiceMaq.slice(1);
 
+    divMaq.innerHTML = `<img src="assets/${choiceMaq}.png" alt="${choiceMaq}" style="width:100px; height:100px;">`;
     // Para ver quién gana
     if (choiceUser === choiceMaq) {
-        message.innerText = 'Es un empate';
+        message.innerText = 'Es un empate🤷‍♀️';
     } else if (
         (choiceUser === 'piedra' && choiceMaq === 'tijeras') ||
         (choiceUser === 'papel' && choiceMaq === 'piedra') ||
         (choiceUser === 'tijeras' && choiceMaq === 'papel')
     ) {
-        message.innerText = '¡GANASTEEEE!';
+        message.innerText = '¡GANASTEEEE🎉🎊🥳!';
     } else {
-        message.innerText = 'Uuuy perdiste!!!. La computadora gana.';
+        message.innerText = 'Uuy perdiste!!😒. La computadora gana.';
     }
 
     // Para reiniciar la jugada

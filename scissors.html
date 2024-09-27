@@ -12,7 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f4f4f4;
+            background-color: rgb(233, 222, 244);
         }
 
         .grid-container {
@@ -77,10 +77,16 @@
         font-size: 16px;
         font-weight: bold;
         color: white;
-        background-color: #dc52b3;
+        background-color: #e235e2;
         border: none;
         border-radius: 8px;
         cursor: pointer;
+        box-shadow: 0 8px 15px rgb(143, 80, 167)
+        }
+        .Jugar:hover {
+            background-color: rgb(200, 87, 206);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -93,7 +99,24 @@
             margin-top:-150px;
             white-space:nowrap;
             left: 180px;
-            }
+        }
+        .boton-regreso {
+        padding: 15px 50px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        background-color: #ed64ed;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 20px;
+        box-shadow: 0 8px 15px rgb(143, 80, 167)
+    }
+    .boton-regreso:hover {
+            background-color: rgb(200, 87, 206);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        }
 
     </style>
 </head>
@@ -111,6 +134,9 @@
             <img id="imgPapel" class="imagen" src="assets/papel.png" alt="Papel">
             <img id="imgTijeras" class="imagen" src="assets/tijeras2.png" alt="Tijeras">
         </div>
+        <a href="index.html">
+            <button class="boton-regreso">Regresar al inicio</button>
+        </a>
 
         <div class="div3" id="divMaq">Computadora</div>
 
